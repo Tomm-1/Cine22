@@ -24,7 +24,7 @@ CREATE TABLE Sala(
 CREATE TABLE Proyeccion(
     idProyeccion MEDIUMINT UNSIGNED NOT NULL,
     idPelicula TINYINT NOT NULL,
-    Precio DECIMAL (5,2) NOT NULL,
+    Precio DECIMAL (9,2) NOT NULL,
     Fecha DATETIME NOT NULL,
     Nombre VARCHAR (50) NOT NULL,
     idSala TINYINT NOT NULL,
@@ -36,7 +36,6 @@ CREATE TABLE Proyeccion(
 );
 CREATE TABLE Cliente(
     DNI INT NOT NULL,
-    idEntrada INT UNSIGNED NOT NULL,
     Nombre VARCHAR (50) NOT NULL,
     Mail VARCHAR (60) NOT NULL,
     Contrasena CHAR (64) NOT NULL,
