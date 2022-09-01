@@ -13,7 +13,7 @@ BEGIN
     FROM   Proyeccion
 	JOIN  Entrada USING (idProyeccion)
     WHERE   idProyeccion = NEW.idProyeccion;
-   IF (EXISTS  (SELECT *
+    IF (EXISTS  (SELECT *
                 FROM    Proyeccion
                 JOIN  Sala USING (idSala)
                 WHERE    TotalVendidas >= Capacidad)) THEN
@@ -29,8 +29,13 @@ DROP TRIGGER IF EXISTS aftInsPelicula $$
 CREATE TRIGGER aftInsPelicula BEFORE INSERT ON Pelicula
 FOR EACH ROW
 BEGIN
-	insert into Proyeccion (idProyeccion, idPelicula, Precio, Fecha, Nombre, idSala)
-	values (LAST_INSERT_ID(), NEW.idPelicula, 1000, NOW(), NEW.Nombre);
+    DECLARE NUSE INT DEFAULT 1;
+    DECLARE CAPA INT;
+    SELECT Capacidad INTO CAPA
+    FROM Sala;
+    WHILE (NUSE <= CAPA) DO 
+        insert into Proyeccion (idProyeccion, idPelicula, Precio, Fecha, Nombre, idSala)
+        values (LAST_INSERT_ID(), NEW.idPelicula, 1000, NOW(), NEW.Nombre, NUSE);
+    END WHILE;
 END $$
--- NI IDEA COMO HACERLO
 

@@ -47,12 +47,9 @@ end $$
 DELIMITER $$
 drop procedure if exists venderEntrada $$
 create procedure venderEntrada (unidproyeccion Mediumint Unsigned, unDNI int)
- -- valor del cliente es el DNI?
 begin
-	insert into Entrada(idProyeccion, DNI) -- Le puse un auto increment a idEntrada en el DER
+	insert into Entrada(idProyeccion, DNI)
 		values (unidProyeccion, unDNI);
-        -- no entiendo el 'desde 1 al número de entrada por función',
-        -- porq creo q si creo otra entra q tenga un id 1 por cada Proyeccion me va a dar duplicado :b
 end $$
 
 
@@ -87,21 +84,3 @@ begin
 	WHERE Fecha BETWEEN Fecha1 AND Fecha2;
 	RETURN recaudacion;
 end $$
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
