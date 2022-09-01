@@ -42,7 +42,7 @@ CREATE TABLE Cliente(
     PRIMARY KEY (DNI)
 );
 CREATE TABLE Entrada(
-    idEntrada INT UNSIGNED NOT NULL,
+    idEntrada INT UNSIGNED NOT NULL AUTO_INCREMENT,
     idProyeccion MEDIUMINT UNSIGNED  NOT NULL,
     DNI INT NOT NULL,
     PRIMARY KEY (idEntrada),
@@ -50,4 +50,4 @@ CREATE TABLE Entrada(
         REFERENCES Cliente (DNI),
     CONSTRAINT fk_Entrada_idProyeccion FOREIGN KEY(idProyeccion)
         REFERENCES Proyeccion (idProyeccion)
-); 
+);
