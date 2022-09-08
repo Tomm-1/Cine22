@@ -30,7 +30,7 @@ DROP TRIGGER IF EXISTS aftInsPelicula $$
 CREATE TRIGGER aftInsPelicula AFTER INSERT ON Pelicula
 FOR EACH ROW
 BEGIN
-    INSERT INTO Proyeccion (idPelicula, Precio, Fecha, Nombre, idSala)
-        SELECT NEW.idPelicula,1000,now(),NEW.Nombre, idSala
+    INSERT INTO Proyeccion (idPelicula, Precio, Fecha, idSala)
+        SELECT NEW.idPelicula,1000,now(), idSala
         FROM Sala;
 END $$
