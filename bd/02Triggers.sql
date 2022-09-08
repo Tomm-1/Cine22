@@ -16,7 +16,7 @@ BEGIN
     IF (EXISTS  (SELECT *
                 FROM    Proyeccion
                 JOIN  Sala USING (idSala)
-                WHERE    TotalVendidas >= Capacidad)) THEN
+                WHERE    TotalVendidas = Capacidad)) THEN
 		SIGNAL SQLSTATE '45000'
 		SET MESSAGE_TEXT = 'Sala Llena';
 	END IF;
@@ -25,17 +25,12 @@ END $$
 
 -- Realizar un trigger para que cada vez que se da de alta una película nueva, 
 -- se crea una proyección por cada sala y para la fecha y hora de creación.
+
 DROP TRIGGER IF EXISTS aftInsPelicula $$
-CREATE TRIGGER aftInsPelicula BEFORE INSERT ON Pelicula
+CREATE TRIGGER aftInsPelicula AFTER INSERT ON Pelicula
 FOR EACH ROW
 BEGIN
-    DECLARE NUSE INT DEFAULT 1;
-    DECLARE CAPA INT;
-    SELECT Capacidad INTO CAPA
-    FROM Sala;
-    WHILE (NUSE <= CAPA) DO 
-        insert into Proyeccion (idProyeccion, idPelicula, Precio, Fecha, Nombre, idSala)
-        values (LAST_INSERT_ID(), NEW.idPelicula, 1000, NOW(), NEW.Nombre, NUSE);
-    END WHILE;
+    INSERT INTO Proyeccion (idPelicula, Precio, Fecha, Nombre, idSala)
+        SELECT NEW.idPelicula,1000,now(),NEW.Nombre, idSala
+        FROM Sala;
 END $$
-
