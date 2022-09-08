@@ -25,10 +25,10 @@ end $$
 
 DELIMITER $$
 drop procedure if exists altaproyecciones $$
-create procedure altaproyecciones (unidproyeccion mediumint unsigned, unidpelicula smallint, unprecio decimal (5.2), unfecha datetime, unnombre varchar (50), unidsala tinyint)
+create procedure altaproyecciones (unidproyeccion mediumint unsigned, unidpelicula smallint, unprecio decimal (5.2), unfecha datetime, unidsala tinyint)
 begin 
-	insert Proyeccion (idProyeccion, idPelicula, Precio, Fecha, Nombre, idSala)
-	values (unidproyeccion, unidpelicula, unprecio, unfecha, unnombre, unidsala);
+	insert Proyeccion (idProyeccion, idPelicula, Precio, Fecha, idSala)
+	values (unidproyeccion, unidpelicula, unprecio, unfecha, unidsala);
 end $$
 
 

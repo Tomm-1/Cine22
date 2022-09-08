@@ -26,7 +26,6 @@ CREATE TABLE Proyeccion(
     idPelicula TINYINT NOT NULL,
     Precio DECIMAL (9,2) NOT NULL,
     Fecha DATETIME NOT NULL,
-    Nombre VARCHAR (50) NOT NULL,
     idSala TINYINT NOT NULL,
     PRIMARY KEY (idProyeccion),
     CONSTRAINT fk_Proyeccion_idPelicula FOREIGN KEY(idPelicula)
