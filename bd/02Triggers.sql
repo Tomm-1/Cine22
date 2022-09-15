@@ -2,6 +2,9 @@
 -- no sobrepase la cantidad de entradas vendidas para la capacidad de la sala 
 -- correspondiente a la proyección, en ese caso no se debe permitir la operación
 --  y se tiene que mostrar la leyenda “Sala Llena”.
+USE Cine22;
+
+SELECT 'Creando Triggers' AS Estado;
 
 DELIMITER $$
 DROP TRIGGER IF EXISTS BefInsEntrada $$

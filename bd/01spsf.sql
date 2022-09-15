@@ -1,4 +1,8 @@
 -- Se pide hacer los SP para dar de alta todas las entidades (menos Entrada y Cliente) con el prefijo ‘alta’.
+USE Cine22;
+
+SELECT 'Creando SPs' AS Estado;
+
 DELIMITER $$
 DROP PROCEDURE IF EXISTS altasala $$
 CREATE PROCEDURE altasala (unidsala TINYINT, unpiso TINYINT UNSIGNED, uncapacidad SMALLINT)
@@ -46,7 +50,7 @@ end $$
 
 DELIMITER $$
 drop procedure if exists venderEntrada $$
-create procedure venderEntrada (unidproyeccion Mediumint Unsigned, unDNI int)
+create procedure venderEntrada (unidProyeccion Mediumint Unsigned, unDNI int)
 begin
 	insert into Entrada(idProyeccion, DNI)
 		values (unidProyeccion, unDNI);

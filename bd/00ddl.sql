@@ -1,6 +1,9 @@
 DROP DATABASE IF EXISTS Cine22;
 CREATE DATABASE Cine22;
 USE Cine22;
+
+SELECT 'Creando Tablas' AS Estado;
+
 CREATE TABLE Genero(
     idGenero TINYINT NOT NULL,
     Genero VARCHAR (45) NOT NULL,
