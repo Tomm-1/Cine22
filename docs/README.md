@@ -1,3 +1,15 @@
-## Documentacion
+## Diagrama de Clases
 
-_Acá va un párrafo que describa el contenido de esta seccion del proyecto_
+```mermaid
+classDiagram
+    class Genero{
+        -idGenero: byte
+        -nombre: string
+    }
+    class Pelicula{
+        -idPelicula: byte
+        -nombre: string
+        -lanzamiento: date
+        -idGenero: byte
+    }
+```
