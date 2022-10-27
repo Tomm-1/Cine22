@@ -1,5 +1,13 @@
 ﻿namespace Cine.Core;
-public class Class1
+public class Genero
 {
+    public Genero(sbyte idGenero, string genero)
+    {
+        this.idGenero = idGenero;
+        this.genero = genero;
+    }
+    public sbyte idGenero { get; set; }
+    public string genero { get; set; }
+
 
 }
