@@ -7,4 +7,6 @@ public interface IAdo
     
     void AltaGenero(Genero genero);
     List<Genero> ObtenerGeneros();
+    void AltaPelicula(Pelicula pelicula);
+    List<Pelicula> ObtenerPeliculas();
 }
