@@ -1,12 +1,10 @@
-using System.Collections.Generic;
-using Cine.Core;
+namespace Cine.Core.Ado;
 
-namespace Cine.Core.Ado
+public interface IAdo
 {
-    public interface IAdo
-    {
-        void Altasala(Sala sala);
-        List<Sala> ObtenerSala();
-        
-    }
+    void Altasala(Sala sala);
+    List<Sala> ObtenerSalas();
+    
+    void AltaGenero(Genero genero);
+    List<Genero> ObtenerGeneros();
 }

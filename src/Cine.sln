@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.Core", "Cine.Core\Cine.Core.csproj", "{69F0A919-872F-4C8A-89D1-6CCDB7C5B2BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.AdoMySQL", "Cine.AdoMySQL\Cine.AdoMySQL.csproj", "{957366F7-96D2-47F4-A313-07460E0FF463}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cine.AdoTest", "Cine.AdoTest\Cine.AdoTest.csproj", "{11CEAB50-04D1-4A70-9487-83669479E00E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{69F0A919-872F-4C8A-89D1-6CCDB7C5B2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F0A919-872F-4C8A-89D1-6CCDB7C5B2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F0A919-872F-4C8A-89D1-6CCDB7C5B2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{957366F7-96D2-47F4-A313-07460E0FF463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{957366F7-96D2-47F4-A313-07460E0FF463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{957366F7-96D2-47F4-A313-07460E0FF463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{957366F7-96D2-47F4-A313-07460E0FF463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CEAB50-04D1-4A70-9487-83669479E00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CEAB50-04D1-4A70-9487-83669479E00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CEAB50-04D1-4A70-9487-83669479E00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CEAB50-04D1-4A70-9487-83669479E00E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
