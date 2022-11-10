@@ -21,4 +21,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cine.Core\Cine.Core.csproj" />
+    <ProjectReference Include="..\Cine.AdoMySQL\Cine.AdoMySQL.csproj" />
+  </ItemGroup>
+
 </Project>
