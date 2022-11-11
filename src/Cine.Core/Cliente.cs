@@ -21,5 +21,9 @@ namespace Cine.Core
 
         public string Mail { get; set; }
         public string Contrasena { get; set; }
+        public Cliente()
+        {
+
+        }
     }
 }

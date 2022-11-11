@@ -3,7 +3,7 @@ namespace Cine.Core.Ado;
 public interface IAdo
 {
 
-    void Altasala(Sala sala);
+    void AltaSala(Sala sala);
     List<Sala> ObtenerSalas();
 
     void AltaGenero(Genero genero);
@@ -11,4 +11,9 @@ public interface IAdo
     void AltaPelicula(Pelicula pelicula);
     List<Pelicula> ObtenerPeliculas();
 
+    void AltaCliente(Cliente cliente);
+    List<Cliente> RegistrarClientes();
+
+    void AltaProyeccion(Proyeccion proyeccion);
+    List<Proyeccion> ObtenerProyecciones();
 }

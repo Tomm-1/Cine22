@@ -19,9 +19,9 @@ public class MapSala : Mapeador<Sala>
         Piso = Convert.ToSByte(fila["Piso"]),
         Capacidad = Convert.ToSByte(fila["Capacidad"])
     };
-    public void Altasala(Sala sala)
-        =>EjecutarComandoCon("altasala", ConfigurarAltaSala, PostAltaSala, sala);
-    
+    public void AltaSala(Sala sala)
+        => EjecutarComandoCon("altaSala", ConfigurarAltaSala, PostAltaSala, sala);
+
     public void ConfigurarAltaSala(Sala sala)
     {
         SetComandoSP("altaSala");
@@ -34,7 +34,7 @@ public class MapSala : Mapeador<Sala>
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
         .SetValor(sala.Piso)
         .AgregarParametro();
-        
+
         BP.CrearParametro("unCapacidad")
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
         .SetValor(sala.Capacidad)
@@ -56,6 +56,6 @@ public class MapSala : Mapeador<Sala>
 
         return ElementoDesdeSP();
     }
-    
+
     public List<Sala> ObtenerSalas() => ColeccionDesdeTabla();
 }

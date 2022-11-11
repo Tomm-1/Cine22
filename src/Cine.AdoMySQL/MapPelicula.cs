@@ -20,7 +20,7 @@ namespace Mapeador
                 idGenero = Convert.ToSByte(fila["idGenero"])
             };
         public void AltaPelicula(Pelicula pelicula)
-    => EjecutarComandoCon("altaGenero", ConfigurarAltaPelicula, PostAltaPelicula, pelicula);
+    => EjecutarComandoCon("altaPelicula", ConfigurarAltaPelicula, PostAltaPelicula, pelicula);
 
         public void ConfigurarAltaPelicula(Pelicula pelicula)
         {
