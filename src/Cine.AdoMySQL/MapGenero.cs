@@ -29,7 +29,7 @@ public class MapGenero : Mapeador<Genero>
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
         .AgregarParametro();
 
-        BP.CrearParametro("Genero")
+        BP.CrearParametro("ungenero")
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.String)
         .SetValor(genero.genero)
         .AgregarParametro();

@@ -1,7 +1,5 @@
 using et12.edu.ar.AGBD.Ado;
-using Cine.Test;
 using Cine.Core;
-using Mapeador;
 
 namespace Cine.Test;
 
@@ -16,11 +14,16 @@ public class GeneroTest
     [Fact]
     public void AltaGenero()
     {
-        var genero = new Genero("Drama");
+        var genero = new Genero(2, "Drama");
         Ado.AltaGenero(genero);
         Assert.Equal(2, genero.idGenero);
     }
 
     [Theory]
     [InlineData(1, "TERROR")]
+    public void TraerGeneros(sbyte idGenero, string genero)
+    {
+        var generos = Ado.ObtenerGeneros();
+        Assert.Contains(generos, g => g.idGenero == idGenero && g.genero == genero);
+    }
 }
