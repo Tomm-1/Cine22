@@ -6,7 +6,7 @@ public class Genero
         this.idGenero = idGenero;
         this.genero = genero;
     }
-     public Genero()
+    public Genero()
     {
     }
     public sbyte idGenero { get; set; }
