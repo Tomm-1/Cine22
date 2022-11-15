@@ -17,7 +17,7 @@ namespace Mapeador
                 DNI = Convert.ToInt16(fila["DNI"]),
                 Nombre = Convert.ToString(fila["Nombre"]),
                 Mail = Convert.ToString(fila["Mail"]),
-                Contrasena = Convert.ToString(fila["idGenero"])
+                Contrasena = Convert.ToString(fila["contrasena"])
             };
         public void AltaCliente(Cliente cliente)
     => EjecutarComandoCon("altaCliente", ConfigurarAltaCliente, PostAltaCliente, cliente);

@@ -19,8 +19,8 @@ public class MapGenero : Mapeador<Genero>
         genero = Convert.ToString(fila["Genero"])
     };
     public void AltaGenero(Genero genero)
-        =>EjecutarComandoCon("altaGenero", ConfigurarAltagenero, PostAltaGenero, genero);
-    
+        => EjecutarComandoCon("altaGenero", ConfigurarAltagenero, PostAltaGenero, genero);
+
     public void ConfigurarAltagenero(Genero genero)
     {
         SetComandoSP("altaGenero");
@@ -43,7 +43,7 @@ public class MapGenero : Mapeador<Genero>
     {
         SetComandoSP("GeneroPorId");
 
-        BP.CrearParametro("unIdGenero")
+        BP.CrearParametro("unidGenero")
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
         .SetValor(idGenero)
         .AgregarParametro();

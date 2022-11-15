@@ -26,8 +26,9 @@ public class MapSala : Mapeador<Sala>
     {
         SetComandoSP("altaSala");
 
-        BP.CrearParametroSalida("unIdSala")
+        BP.CrearParametro("unidSala")
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
+        .SetValor(sala.idSala)
         .AgregarParametro();
 
         BP.CrearParametro("unPiso")

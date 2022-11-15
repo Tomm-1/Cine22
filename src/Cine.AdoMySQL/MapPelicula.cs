@@ -41,7 +41,7 @@ namespace Mapeador
             .SetValor(pelicula.Lanzamiento)
             .AgregarParametro();
 
-            BP.CrearParametro("unIdGenero")
+            BP.CrearParametro("unidGenero")
             .SetValor(MySql.Data.MySqlClient.MySqlDbType.UByte)
             .SetValor(pelicula.idGenero)
             .AgregarParametro();
@@ -55,7 +55,7 @@ namespace Mapeador
         {
             SetComandoSP("PeliculaPorId");
 
-            BP.CrearParametro("unIdPelicula")
+            BP.CrearParametro("unidPelicula")
             .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
             .SetValor(idPelicula)
             .AgregarParametro();
