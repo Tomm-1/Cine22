@@ -57,6 +57,5 @@ public class MapSala : Mapeador<Sala>
 
         return ElementoDesdeSP();
     }
-
     public List<Sala> ObtenerSalas() => ColeccionDesdeTabla();
 }

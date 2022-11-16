@@ -7,20 +7,17 @@ namespace Cine.Core
 {
     public class Cliente
     {
-        public Cliente(string nombre, int dni, string mail, string contrasena)
-        {
-            Nombre = nombre;
-            DNI = dni;
-            Mail = mail;
-            Contrasena = contrasena;
-
-
-        }
         public int DNI { get; set; }
         public string Nombre { get; set; }
-
         public string Mail { get; set; }
         public string Contrasena { get; set; }
+        public Cliente(string Nombre, int DNI, string mail, string contrasena)
+        {
+            this.Nombre = Nombre;
+            this.DNI = DNI;
+            this.Mail = mail;
+            this.Contrasena = contrasena;
+        }
         public Cliente()
         {
 

@@ -1,14 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Cine.Core
+namespace Cine.Core;
+public class Entrada
 {
-    public class Entrada
+    public uint idEntrada { get; set; }
+    public uint idProyeccion { get; set; }
+    public int DNI { get; set; }
+    public Entrada(uint idEntrada, uint idProyeccion, int DNI)
     {
-        public uint idEntrada { get; set; }
-        public uint idProyeccion { get; set; }
-        public int DNI { get; set; }
+        this.idEntrada = idEntrada;
+        this.idProyeccion = idProyeccion;
+        this.DNI = DNI;
+    }
+    public Entrada()
+    {
     }
 }
