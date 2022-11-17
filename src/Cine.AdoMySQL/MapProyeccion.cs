@@ -14,40 +14,40 @@ namespace Mapeador
         public override Proyeccion ObjetoDesdeFila(DataRow fila)
         => new Proyeccion()
         {
-            idProyeccion = Convert.ToUInt16(fila["unidProyeccion"]),
+            idProyeccion = Convert.ToUInt16(fila["unidproyeccion"]),
             idPelicula = Convert.ToSByte(fila["idPelicula"]),
             Fecha = Convert.ToDateTime(fila["Fecha"]),
             Precio = Convert.ToDecimal(fila["Precio"]),
             idSala = Convert.ToSByte(fila["idSala"])
         };
         public void AltaProyeccion(Proyeccion proyeccion)
-        => EjecutarComandoCon("altaproyeccion", ConfigurarAltaProyeccion, PostAltaProyeccion, proyeccion);
+        => EjecutarComandoCon("altaproyecciones", ConfigurarAltaProyeccion, PostAltaProyeccion, proyeccion);
 
         public void ConfigurarAltaProyeccion(Proyeccion proyeccion)
         {
-            SetComandoSP("altaproyeccion");
+            SetComandoSP("altaproyecciones");
 
-            BP.CrearParametro("unidProyeccion")
+            BP.CrearParametro("unidproyeccion")
             .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UInt16)
             .SetValor(proyeccion.idProyeccion)
             .AgregarParametro();
 
-            BP.CrearParametro("unidPelicula")
+            BP.CrearParametro("unidpelicula")
             .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
             .SetValor(proyeccion.idPelicula)
             .AgregarParametro();
 
-            BP.CrearParametro("unPrecio")
+            BP.CrearParametro("unprecio")
             .SetTipo(MySql.Data.MySqlClient.MySqlDbType.Decimal)
             .SetValor(proyeccion.Precio)
             .AgregarParametro();
 
-            BP.CrearParametro("unFecha")
+            BP.CrearParametro("unfecha")
             .SetValor(MySql.Data.MySqlClient.MySqlDbType.DateTime)
             .SetValor(proyeccion.Fecha)
             .AgregarParametro();
 
-            BP.CrearParametro("unidSala")
+            BP.CrearParametro("unidsala")
             .SetValor(MySql.Data.MySqlClient.MySqlDbType.UByte)
             .SetValor(proyeccion.idSala)
             .AgregarParametro();
@@ -61,7 +61,7 @@ namespace Mapeador
         {
             SetComandoSP("ProyeccionPorId");
 
-            BP.CrearParametro("unidProyeccion")
+            BP.CrearParametro("unidproyeccion")
             .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UInt16)
             .SetValor(idProyeccion)
             .AgregarParametro();

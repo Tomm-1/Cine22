@@ -25,5 +25,10 @@
     <ProjectReference Include="..\Cine.Core\Cine.Core.csproj" />
     <ProjectReference Include="..\Cine.AdoMySQL\Cine.AdoMySQL.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="appSettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

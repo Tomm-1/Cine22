@@ -25,8 +25,9 @@ public class MapGenero : Mapeador<Genero>
     {
         SetComandoSP("altaGenero");
 
-        BP.CrearParametroSalida("unidGenero")
+        BP.CrearParametro("unidGenero")
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
+        .SetValor(genero.idGenero)
         .AgregarParametro();
 
         BP.CrearParametro("ungenero")

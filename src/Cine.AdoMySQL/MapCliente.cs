@@ -14,42 +14,37 @@ namespace Mapeador
         public override Cliente ObjetoDesdeFila(DataRow fila)
             => new Cliente()
             {
-                DNI = Convert.ToInt16(fila["DNI"]),
+                DNI = Convert.ToInt32(fila["DNI"]),
                 Nombre = Convert.ToString(fila["Nombre"]),
                 Mail = Convert.ToString(fila["Mail"]),
-                Contrasena = Convert.ToString(fila["contrasena"])
+                Contrasena = Convert.ToString(fila["Contrasena"])
             };
         public void AltaCliente(Cliente cliente)
-    => EjecutarComandoCon("altaCliente", ConfigurarAltaCliente, PostAltaCliente, cliente);
+    => EjecutarComandoCon("RegistrarCliente", ConfigurarAltaCliente, cliente);
 
         public void ConfigurarAltaCliente(Cliente cliente)
         {
-            SetComandoSP("altaCliente");
+            SetComandoSP("RegistrarCliente");
 
-            BP.CrearParametro("unDNI")
-            .SetTipo(MySql.Data.MySqlClient.MySqlDbType.Int16)
+            BP.CrearParametro("undni")
+            .SetTipo(MySql.Data.MySqlClient.MySqlDbType.Int32)
             .SetValor(cliente.DNI)
             .AgregarParametro();
 
-            BP.CrearParametro("unNombre")
+            BP.CrearParametro("unnombre")
             .SetTipoVarchar(50)
             .SetValor(cliente.Nombre)
             .AgregarParametro();
 
-            BP.CrearParametro("unMail")
+            BP.CrearParametro("unmail")
             .SetTipoVarchar(50)
             .SetValor(cliente.Mail)
             .AgregarParametro();
 
             BP.CrearParametro("uncontrasena")
-            .SetValor(MySql.Data.MySqlClient.MySqlDbType.String)
+            .SetTipoVarchar(50)
             .SetValor(cliente.Contrasena)
             .AgregarParametro();
-        }
-        public void PostAltaCliente(Cliente cliente)
-        {
-            var paramDNI = GetParametro("unDNI");
-            cliente.DNI = Convert.ToSByte(paramDNI.Value);
         }
         public Cliente ClienteporDNI(int DNI)
         {

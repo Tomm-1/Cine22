@@ -21,10 +21,10 @@ end$$
 
 DELIMITER $$
 drop procedure if exists altapelicula $$
-create procedure altapelicula (unidpelicula smallint, unnombre varchar (50), unlanzamiento date, unidgenero tinyint)
+create procedure altapelicula (unidpelicula TINYINT, unnombre varchar (50), unlanzamiento date, unidgenero tinyint)
 begin 
-insert Pelicula (idPelicula, Nombre, Lanzamiento, idGenero)
-values (unidpelicula, unnombre, unlanzamiento, unidgenero);
+	insert Pelicula (idPelicula, Nombre, Lanzamiento, idGenero)
+	values (unidpelicula, unnombre, unlanzamiento, unidgenero);
 end $$
 
 DELIMITER $$
