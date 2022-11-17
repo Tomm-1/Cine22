@@ -14,7 +14,7 @@ namespace Mapeador
         public override Proyeccion ObjetoDesdeFila(DataRow fila)
         => new Proyeccion()
         {
-            idProyeccion = Convert.ToUInt16(fila["unidproyeccion"]),
+            idProyeccion = Convert.ToUInt16(fila["idProyeccion"]),
             idPelicula = Convert.ToSByte(fila["idPelicula"]),
             Fecha = Convert.ToDateTime(fila["Fecha"]),
             Precio = Convert.ToDecimal(fila["Precio"]),
