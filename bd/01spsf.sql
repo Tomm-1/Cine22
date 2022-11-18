@@ -97,5 +97,6 @@ CREATE PROCEDURE BuscarCliente (unmail VARCHAR(60), uncontrasena CHAR(64))
 BEGIN
    SELECT *
 	FROM Cliente 
-	WHERE  MATCH (Mail, Contrasena) AGAINST (unmail, Sha2(uncontrasena, 256));
+	WHERE Mail = unmail
+	AND Contrasena = Sha2(uncontrasena,256);
 END $$

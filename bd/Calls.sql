@@ -17,3 +17,5 @@ CALL venderEntrada(2,41534607);
 CALL top10('2033/03/03','2033/04/03');
 
 SELECT RecaudacionPara(1,'2033/03/03','2033/04/03') 'RECAUDADO';
+
+CALL BuscarCliente('uvuonug41@gmail.com', 'hailgrasa');
