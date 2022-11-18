@@ -19,7 +19,6 @@ public class SalaTest
         Assert.Equal(3, sala.idSala);
     }
     [Theory]
-    [InlineData(1, 1, 10)]
     [InlineData(2, 1, 10)]
     public void TraerSalas(sbyte idSala, sbyte Piso, short Capacidad)
     {
