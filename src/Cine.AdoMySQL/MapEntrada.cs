@@ -20,11 +20,11 @@ public class MapEntrada : Mapeador<Entrada>
         DNI = Convert.ToInt16(fila["DNI"])
     };
     public void AltaEntrada(Entrada entrada)
-        => EjecutarComandoCon("altaEntrada", ConfigurarAltaEntrada, PostAltaEntrada, entrada);
+        => EjecutarComandoCon("VenderEntrada", ConfigurarAltaEntrada, PostAltaEntrada, entrada);
 
     public void ConfigurarAltaEntrada(Entrada entrada)
     {
-        SetComandoSP("altaEntrada");
+        SetComandoSP("VenderEntrada");
 
         BP.CrearParametro("unidEntrada")
         .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UInt16)
