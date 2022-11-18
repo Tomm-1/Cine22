@@ -15,9 +15,9 @@ public class MapEntrada : Mapeador<Entrada>
     public override Entrada ObjetoDesdeFila(DataRow fila)
     => new Entrada()
     {
-        idEntrada = Convert.ToUInt16(fila["idEntrada"]),
-        idProyeccion = Convert.ToUInt16(fila["idProyeccion"]),
-        DNI = Convert.ToInt16(fila["DNI"])
+        idEntrada = Convert.ToUInt32(fila["idEntrada"]),
+        idProyeccion = Convert.ToUInt32(fila["idProyeccion"]),
+        DNI = Convert.ToInt32(fila["DNI"])
     };
     public void AltaEntrada(Entrada entrada)
         => EjecutarComandoCon("VenderEntrada", ConfigurarAltaEntrada, PostAltaEntrada, entrada);

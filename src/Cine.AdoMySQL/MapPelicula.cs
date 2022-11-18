@@ -14,48 +14,48 @@ namespace Mapeador
         public override Pelicula ObjetoDesdeFila(DataRow fila)
             => new Pelicula()
             {
-                idPelicula = Convert.ToSByte(fila["idPelicula"]),
+                idPelicula = Convert.ToByte(fila["idPelicula"]),
                 Nombre = Convert.ToString(fila["Nombre"]),
                 Lanzamiento = Convert.ToDateTime(fila["Lanzamiento"]),
-                idGenero = Convert.ToSByte(fila["idGenero"])
+                idGenero = Convert.ToByte(fila["idGenero"])
             };
         public void AltaPelicula(Pelicula pelicula)
-    => EjecutarComandoCon("altaPelicula", ConfigurarAltaPelicula, PostAltaPelicula, pelicula);
+    => EjecutarComandoCon("altapelicula", ConfigurarAltaPelicula, PostAltaPelicula, pelicula);
 
         public void ConfigurarAltaPelicula(Pelicula pelicula)
         {
-            SetComandoSP("altaPelicula");
+            SetComandoSP("altapelicula");
 
             BP.CrearParametro("unidpelicula")
             .SetTipo(MySql.Data.MySqlClient.MySqlDbType.Byte)
             .SetValor(pelicula.idPelicula)
             .AgregarParametro();
 
-            BP.CrearParametro("unNombre")
-            .SetTipoVarchar(50)
+            BP.CrearParametro("unnombre")
+            .SetTipo(MySql.Data.MySqlClient.MySqlDbType.String)
             .SetValor(pelicula.Nombre)
             .AgregarParametro();
 
-            BP.CrearParametro("unLanzamiento")
+            BP.CrearParametro("unlanzamiento")
             .SetValor(MySql.Data.MySqlClient.MySqlDbType.Date)
             .SetValor(pelicula.Lanzamiento)
             .AgregarParametro();
 
-            BP.CrearParametro("unidGenero")
-            .SetValor(MySql.Data.MySqlClient.MySqlDbType.UByte)
+            BP.CrearParametro("unidgenero")
+            .SetValor(MySql.Data.MySqlClient.MySqlDbType.Byte)
             .SetValor(pelicula.idGenero)
             .AgregarParametro();
         }
         public void PostAltaPelicula(Pelicula pelicula)
         {
-            var paramIdPelicula = GetParametro("unidPelicula");
-            pelicula.idPelicula = Convert.ToSByte(paramIdPelicula.Value);
+            var paramIdPelicula = GetParametro("unidpelicula");
+            pelicula.idPelicula = Convert.ToByte(paramIdPelicula.Value);
         }
         public Pelicula PeliculaPorId(sbyte idPelicula)
         {
             SetComandoSP("PeliculaPorId");
 
-            BP.CrearParametro("unidPelicula")
+            BP.CrearParametro("unidpelicula")
             .SetTipo(MySql.Data.MySqlClient.MySqlDbType.UByte)
             .SetValor(idPelicula)
             .AgregarParametro();

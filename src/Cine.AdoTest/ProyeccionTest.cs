@@ -13,7 +13,7 @@ public class ProyeccionTest
     [Fact]
     public void AltaProyeccion()
     {
-        var proyeccion = new Proyeccion(6, 1, 1000, DateTime.Now, 1);
+        var proyeccion = new Proyeccion(6, 1, 1000, DateTime.Today, 1);
         Ado.AltaProyeccion(proyeccion);
         Assert.Equal(1, proyeccion.idPelicula);
     }

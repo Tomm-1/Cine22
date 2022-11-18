@@ -14,9 +14,9 @@ public class EntradaTest
     [Fact]
     public void AltaEntrada()
     {
-        var entrada = new Entrada(2, 3, 33);
+        var entrada = new Entrada(1, 4, 41534607);
         Ado.AltaEntrada(entrada);
-        Assert.Equal((uint)2,entrada.idEntrada);
+        Assert.Equal((uint)1,entrada.idEntrada);
     }
 
     [Theory]
