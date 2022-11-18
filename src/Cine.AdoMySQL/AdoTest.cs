@@ -11,6 +11,14 @@ namespace Cine.Test
 {
     public class AdoTest : IAdo
     {
+        public AdoTest(AdoAGBD ado, MapSala mapSala, MapProyeccion mapProyeccion, MapEntrada mapEntrada)
+        {
+            this.Ado = ado;
+            this.MapSala = mapSala;
+            this.MapProyeccion = mapProyeccion;
+            this.MapEntrada = mapEntrada;
+
+        }
         public AdoAGBD Ado { get; set; }
         public MapGenero MapGenero { get; set; }
         public MapSala MapSala { get; set; }
@@ -40,5 +48,7 @@ namespace Cine.Test
         public List<Pelicula> ObtenerPeliculas() => MapPelicula.ObtenerPeliculas();
         public void AltaEntrada(Entrada entrada) => MapEntrada.AltaEntrada(entrada);
         public List<Entrada> VenderEntradas() => MapEntrada.VenderEntradas();
+        public Cliente? BuscarCliente(string email, string contrasena) => MapCliente.BuscarCliente(email, contrasena);
+
     }
 }

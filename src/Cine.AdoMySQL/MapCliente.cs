@@ -57,6 +57,35 @@ namespace Mapeador
 
             return ElementoDesdeSP();
         }
+        public Cliente? BuscarCliente(string mail, string contrasena)
+        {
+            SetComandoSP("BuscarCliente");
+
+            BP.CrearParametro("unmail")
+            .SetTipoVarchar(60)
+            .SetValor(mail)
+            .AgregarParametro();
+
+
+            BP.CrearParametro("uncontrasena")
+                .SetTipoVarchar(64)
+                .SetValor(contrasena)
+                .AgregarParametro();
+
+            Cliente? cliente;
+
+            try
+            {
+                cliente = ElementoDesdeSP();
+            }
+            catch (System.Exception)
+            {
+                cliente = null;
+            }
+
+            return cliente;
+
+        }
 
         public List<Cliente> RegistrarClientes() => ColeccionDesdeTabla();
     }

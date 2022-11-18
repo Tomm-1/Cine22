@@ -25,4 +25,18 @@ public class ClienteTest
         var clientes = Ado.RegistrarClientes();
         Assert.Contains(clientes, c => c.DNI == DNI);
     }
+
+    public void TrearBuscarCLiente(int DNI)
+    {
+        var clientes = Ado.RegistrarClientes();
+        Assert.Contains(clientes, c => c.DNI == DNI);
+    }
+
+
+    [Fact]
+    public void ObtenerBuscarCliente()
+    {
+        var cliente = Ado.BuscarCliente("uvuonug41@gmail.com", "hailgrasa");
+        Assert.Equal("uvuonug41@gmail.com", cliente.Mail);
+    }
 }

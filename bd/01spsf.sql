@@ -92,8 +92,8 @@ end $$
 -- Realizar un SP que al pasar un mail y constraseña encriptada las compare para saber si ya existe, devolver toda la fila de la tabla cliente 
 
 DELIMITER $$
-DROP PROCEDURE IF EXISTS BuscarCliente $$
-CREATE PROCEDURE BuscarCliente (unmail VARCHAR(60), uncontrasena CHAR(64))
+DROP PROCEDURE IF EXISTS ObtenerBuscarCliente $$
+CREATE PROCEDURE ObtenerBuscarCliente (unmail VARCHAR(60), uncontrasena CHAR(64))
 BEGIN
    SELECT *
 	FROM Cliente 
