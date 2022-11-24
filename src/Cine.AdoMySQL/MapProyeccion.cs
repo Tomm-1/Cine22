@@ -43,7 +43,7 @@ namespace Mapeador
             .AgregarParametro();
 
             BP.CrearParametro("unfecha")
-            .SetValor(MySql.Data.MySqlClient.MySqlDbType.DateTime)
+            .SetTipo(MySql.Data.MySqlClient.MySqlDbType.DateTime)
             .SetValor(proyeccion.Fecha)
             .AgregarParametro();
 
@@ -54,7 +54,7 @@ namespace Mapeador
         }
         public void PostAltaProyeccion(Proyeccion proyeccion)
         {
-            var paramIdProyeccion = GetParametro("idProyeccion");
+            var paramIdProyeccion = GetParametro("unidproyeccion");
             proyeccion.idProyeccion = Convert.ToUInt16(paramIdProyeccion.Value);
         }
         public Proyeccion ProyeccionPorId(uint idProyeccion)

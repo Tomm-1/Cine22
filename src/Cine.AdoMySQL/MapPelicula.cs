@@ -37,7 +37,7 @@ namespace Mapeador
             .AgregarParametro();
 
             BP.CrearParametro("unlanzamiento")
-            .SetValor(MySql.Data.MySqlClient.MySqlDbType.Date)
+            .SetTipo(MySql.Data.MySqlClient.MySqlDbType.Date)
             .SetValor(pelicula.Lanzamiento)
             .AgregarParametro();
 
