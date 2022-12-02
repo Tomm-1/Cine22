@@ -76,7 +76,7 @@ namespace Mapeador
             .SetValor(Fecha2)
             .AgregarParametro();
 
-            return idPelicula ElementoDesdeSP();
+            return ;
         }
         public List<Pelicula> ObtenerPeliculas() => ColeccionDesdeTabla();
     }
