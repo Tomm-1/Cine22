@@ -49,6 +49,6 @@ namespace Cine.Test
         public void AltaEntrada(Entrada entrada) => MapEntrada.AltaEntrada(entrada);
         public List<Entrada> VenderEntradas() => MapEntrada.VenderEntradas();
         public Cliente? BuscarCliente(string email, string contrasena) => MapCliente.BuscarCliente(email, contrasena);
-
+        public Pelicula? Top10(DateTime Fecha1, DateTime Fecha2) => MapPelicula.Top10(Fecha1, Fecha2);
     }
 }

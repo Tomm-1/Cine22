@@ -62,7 +62,22 @@ namespace Mapeador
 
             return ElementoDesdeSP();
         }
+        public Pelicula? Top10(DateTime Fecha1, DateTime Fecha2)
+        {
+            SetComandoSP("Top10");
 
+            BP.CrearParametro("Fecha1")
+            .SetTipo(MySql.Data.MySqlClient.MySqlDbType.DateTime)
+            .SetValor(Fecha1)
+            .AgregarParametro();
+
+            BP.CrearParametro("Fecha2")
+            .SetTipo(MySql.Data.MySqlClient.MySqlDbType.DateTime)
+            .SetValor(Fecha2)
+            .AgregarParametro();
+
+            return idPelicula ElementoDesdeSP();
+        }
         public List<Pelicula> ObtenerPeliculas() => ColeccionDesdeTabla();
     }
 }

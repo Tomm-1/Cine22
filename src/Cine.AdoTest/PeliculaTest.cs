@@ -26,4 +26,12 @@ public class PeliculaTest
         var peliculas = Ado.ObtenerPeliculas();
         Assert.Contains(peliculas, p => p.idPelicula == idPelicula);
     }
+    [Fact]
+    public void Top10()
+    {
+        DateTime Fecha1 = new DateTime(2022, 11, 24);
+        DateTime Fecha2 = new DateTime(2022, 11, 24);
+        var peliculas = Ado.Top10(Fecha1, Fecha2);
+        Assert.Equal()
+    }
 }
